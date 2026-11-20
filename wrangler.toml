@@ -1,0 +1,15 @@
+# Cloudflare-Konfiguration für die Wichtel-App
+name = "wichteln"
+main = "src/worker.js"
+compatibility_date = "2025-11-01"
+
+# Die Web-Oberfläche (HTML, JS) liegt im Ordner public/
+[assets]
+directory = "./public"
+binding = "ASSETS"
+
+# Datenbank. Eine database_id ist nicht nötig: Cloudflare legt die Datenbank
+# beim ersten Deploy automatisch an. Die Tabellen erstellt die App selbst.
+[[d1_databases]]
+binding = "DB"
+database_name = "wichteln-db"
